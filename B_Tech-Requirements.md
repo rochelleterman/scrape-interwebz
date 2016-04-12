@@ -13,6 +13,14 @@ After the installer does its thing, it leaves the window open, so that you can p
 
 Chances are that you want to have an easy way to restart that Git Bash. You can install shortcuts in the start menu, on the desktop or in the QuickStart bar by calling the script /share/msysGit/add-shortcut.tcl (call it without parameters to see a short help text).
 
+#### Mac OS X
+
+The default shell in all versions of Mac OS X is bash, so no need to install anything. You access bash from the Terminal (found in `/Applications/Utilities`). You may want to keep Terminal in your dock for this class.
+
+#### Linux
+
+The default shell is usually Bash, but if your machine is set up differently you can run it by opening a terminal and typing bash. There is no need to install anything.
+
 ## 2. Google Chrome & Firefox
 
 We'll be using Google Chrome as out main web browser. Download [here](https://www.google.com/chrome/). 
