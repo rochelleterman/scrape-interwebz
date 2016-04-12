@@ -13,7 +13,7 @@ This workshop will cover how to extract data from the web using Python. We'll be
 
 ### Requirements
 
-This workshop will be using the Python programming language. See the software requirements [here](B-Tech-Requirements.md).
+This workshop will be using the Python programming language. See the software requirements [here](B_Tech-Requirements.md).
 
 We will assume a basic knowledge of Python. If you've taken the D-Lab's Python Intensive, that should be sufficient. 
 
