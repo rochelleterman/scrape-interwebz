@@ -9,7 +9,7 @@ This workshop will cover how to extract data from the web using Python. We'll be
 - HTML / CSS 
 - Manipulating a webpage with Google DevTools
 - Webscraping with Beautiful Soup
-- Scraping javascript-heavy sites with Selenium
+- Scraping javascript-heavy sites and interactive sites with Selenium
 
 ### Requirements
 
