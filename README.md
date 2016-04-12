@@ -1,6 +1,6 @@
 # Extracting Data from the Internet in Python
 
-This workshop will cover how to extract data from the web using Python. 
+This workshop will cover how to extract data from the web using Python. We'll be covering both APIs and webscraping.
 
 ### Topics Covered
 
@@ -10,6 +10,12 @@ This workshop will cover how to extract data from the web using Python.
 - Manipulating a webpage with Google DevTools
 - Webscraping with Beautiful Soup
 - Scraping javascript-heavy sites with Selenium
+
+### Requirements
+
+This workshop will be using the Python programming language. See the software requirements [here](B-Tech-Requirements.md).
+
+We will assume a basic knowledge of Python. If you've taken the D-Lab's Python Intensive, that should be sufficient. 
 
 **Please note that materials are still in development, and will be changing.**
 
