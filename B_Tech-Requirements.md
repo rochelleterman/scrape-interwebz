@@ -32,6 +32,8 @@ Python is a popular language for scientific computing, and great for general-pur
 
 Regardless of how you choose to install it, please make sure you install Python version 3.2 or above.
 
+For helpful information on switching between Python 2 and 3 environments in Anaconda, see [here](https://www.continuum.io/blog/developer-blog/python-3-support-anaconda).
+
 We will teach using the Jupiter (aka IPython) notebook, a programming environment that runs in a web browser. Jupiter notebooks are included in the all-in-one installer.
 
 ####Windows
