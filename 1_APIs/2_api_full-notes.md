@@ -119,11 +119,11 @@ Fortunately, the NYT Article API is [very well documented](http://developer.nyti
 
 ![](figures/nytimes_docs.png)
 
-### STEP 4: Constructing API GET Requests in R
+### STEP 4: Constructing API GET Requests in Python (and R)
 
 See `lecture-code.ipynb` to continue!
 
-Note: `lecture-code-r.Rmd` is supplementary material to teach you how to construct GET requests in `R`.
+Note: We have [supplementary material](Bonus_Materials/1_APIs_in_R.Rmd) to teach you how to construct GET requests in `R`.
 
 
 ### Try it out!
