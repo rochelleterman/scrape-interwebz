@@ -65,10 +65,10 @@ $ python --version
 
 The python version should include "Anaconda" and its version information.
 
-Ipython is a python development environment that comes pre-installed with the Anaconda python distribution. To see if you have it, type the following into your terminal window:
+Jupyter notesbook is a python development environment that comes pre-installed with the Anaconda python distribution. To see if you have it, type the following into your terminal window:
 
 ```bash
-$ ipython notebook
+$ jupyter notebook
 ```
 
 This should open a programming interface in your default web browser. It may take a few minutes the first time. To close, just close your browser and then `CTRL-C` to end the process in the command line.
