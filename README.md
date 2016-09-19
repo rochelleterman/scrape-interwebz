@@ -1,3 +1,5 @@
+[![Binder](http://mybinder.org/badge.svg)](http://mybinder.org:/repo/rochelleterman/scrape-interwebz)
+
 # Extracting Data from the Internet in Python
 
 This workshop will cover how to extract data from the web using Python. We'll be covering both APIs and webscraping.
