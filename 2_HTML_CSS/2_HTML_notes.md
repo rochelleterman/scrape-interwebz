@@ -53,35 +53,40 @@
 
 ![layout](img/layout.png)
 
+## Webscraping returns HTML
+
+* It's easy to pull HTML from a website
+* It's much more difficult to find the information you want from that HTML
+
+![html](img/html.png)
+
+* So we have to learn how to **parse** HTML to find the data we want
+
+## Basic strategy of webscraping:
+
+1. Find out what kind of HTML element your data is in. (Use your browser‘s “inspector” to)
+2. Think about how you can differentiate those elements from other, similar elements in the webpage using CSS.
+3. Use Python and add-on modules like BeautifulSoup to extract just that data.
+
 ## HTML: Basic structure
 
 ```html
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>Page title</title>
-	</head>
- 	<body>
- 		<p>Hello world!</p>
- 	</body>
+   <head>
+    <title>Page title</title>
+  </head>
+  <body>
+    <p>Hello world!</p>
+  </body>
 </html>
 ```
 
 ## HTML is a Tree
 
-![HTML](http://www.openbookproject.net/tutorials/getdown/css/images/lesson4/HTMLDOMTree.png)
+<img src="http://www.openbookproject.net/tutorials/getdown/css/images/lesson4/HTMLDOMTree.png" style="width: 90%">
 
-## Document Object Model
-
-Most modern browsers have a parser that reads in the HTML document, parses it into a DOM (Document Object Model) structure, and then renders the DOM structure.
-
-Much like HTTP, the DOM is an agreed-upon standard.
-
-The DOM is much more than what I've described, but for our purposes, what is most important to understand is that the text is only one part of an HTML element, and we need to select it explicitly.
-
-## DOM
-
-![dom](http://www.cs.toronto.edu/~shiva/cscb07/img/dom/treeStructure.png)
+Each branch of the tree is called an *element*
 
 ## HTML Elements
 
@@ -110,7 +115,7 @@ Generally speaking, an HTML element has three components:
 | `ol,`,`<ul>`,`<li>` | ordered list, unordered list, list item |
 | `<a href="page.html">` | link to "page.html" |
 | `<table>`,`<tr>`,`<td>`  | table, table row, table item |
-| `<div>`,`<span` | general containers |
+| `<div>`,`<span>` | general containers |
 
 ## HTML Attributes
 
@@ -121,6 +126,12 @@ Generally speaking, an HTML element has three components:
 
 ![html-attributes](img/attributes.png)
 
+## Finding HTML 
+
+* Sometimes we can find the data we want just by using HTML tags or attributes (e.g, all the `<a>` tags)
+* More often, this isn't enough: There might be 1000 `<a>` tags on a page. But maybe we want only the `<a>` tags *inside* of a `<p>` tag.
+* Enter CSS
+
 ## CSS
 
 * CSS = Cascading Style Sheet. 
@@ -128,79 +139,81 @@ Generally speaking, an HTML element has three components:
 * HTML came first. But it was only meant to define content, not format it. While HTML contains tags like `<font>` and `<color>`, this is a very inefficient way to develop a website.
 * To solve this problem, CSS was created specifically to display content on a webpage. Now, one can change the look of an entire website just by changing one file.
 * Most web designers litter the HTML markup with tons of `classe`s and `id`s to provide "hooks" for their CSS.
-* You can piggyback on these to jump to the parts of the markup that contain the data you need.
+* You can piggyback on these "hooks" to jump to the parts of the markup that contain the data you need.
 
-## CSS Anatmy
+## CSS Anatomy: Selectors
 
-* Selectors
-    - Element selector: `p`)
-    - Class selector:  `p class="blue"`
-    - I.D. selector: `p id="blue"`
+| Type  | HTML    | CSS Selector   | 
+| :----- | :-------: | -------------:  |
+| Element | `<a>`,     | `a` <br> `p a`| 
+| Class | `<a class="blue">`  | `.blue` <br> `a.blue` |
+| ID | `<a id="blue">` | `#blue` <br> `a#blue` |
 
-* Declarations
-    - Selector: `p`
-    - Property: `background-color`
-    - Value: `yellow`
+## CSS Anatomy: Declarations
 
-* Hooks
+  - Selector: `a`
+  - Property: `background-color`
+  - Value: `yellow`
+
+## CSS Anatomy: Hooks
 
 ![css-rule](img/css-rule-2.png)
 
 ## CSS + HTML
 
+What does the following HTML render to?
+
 ```html
 <body>
-	<table id="content">
-    	<tr class='name'>
-        	<td class='firstname'>
-         		Kurtis
-        	</td>
-        	<td class='lastname'>
-          		McCoy
-        	</td>
-    	</tr>
-    	<tr class='name'>
-      		<td class='firstname'>
-          		Leah
-        	</td>
-        	<td class='lastname'>
-          		Guerrero
-     		</td>
-    	</tr>
- 	</table>
+  <table id="content">
+      <tr class='kurtis'>
+          <td class='firstname'>
+            Kurtis
+          </td>
+          <td class='lastname'>
+              McCoy
+          </td>
+      </tr>
+      <tr class='leah'>
+          <td class='firstname'>
+              Leah
+          </td>
+          <td class='lastname'>
+              Guerrero
+        </td>
+      </tr>
+  </table>
 </body>
 ```
 
 > #### Exercises 1
-> 
+>
 > Find the CSS selectors for the following elements in the HTML above.
 > (Hint: There will be multiple solutions for each)
 > 
 > 1. The entire table
-> 2. The row containing "Kurtis McCoy"
-> 3. Just the element containing first names
+> 2. Just the row containing "Kurstin McCoy"
+> 3. Just the elements containing first names
+
+> #### Exercises 2
 > 
-
-## Why This Matters
-
-Basic strategy of webscraping:
-
-1. Use your browser‘s “inspector” to discover what kind of HTML element your
-data is in.
-2. Think about how you can differentiate those elements from other, similar elements in the webpage using CSS.
-3. Use Python and add-on modules like BeautifulSoup to extract just that data.
+> A great resource to practice your CSS selection skills is http://flukeout.github.io/
+> Complete the first 10 execises
 
 ## Inspect Element
 
 Google Chrome comes with great developer tools to help parse a webpage.
 
-![inspect element](img/inspect-element.png)
+<img src ="img/inspect-element.png", style="height: 25%", class="float"> 
 
 The inspector gives you the HTML tree, as well as all the CSS selectors and style information.
 
+## Inspect Element
+
 ![inspect element](img/inspect-element-css.png)
 
-> #### Exercise 2
+---
+> #### Exercise 3
 > 
 > Go to http://rochelleterman.github.io/. Using Google Chrome's inspect element:
 > 
@@ -211,6 +224,12 @@ The inspector gives you the HTML tree, as well as all the CSS selectors and styl
 > Useful CSS declarations [here](http://miriamposner.com/blog/wp-content
 > uploads/2011/11/usefulcss.pdf)
 
+> #### Extra Challenge:
+> 
+> Go to any website, and redesign the site using Google Chrome's inspect 
+> element.
+> 
+
 ## Putting it all together:
 
 1. Use Inspect Element to see how your data is structured
@@ -218,16 +237,13 @@ The inspector gives you the HTML tree, as well as all the CSS selectors and styl
 3. Pray that there is some kind of pattern
 4. Leverage that pattern using Python
 
-> #### Exercise 3
-> 
-> Go to any website, and redesign the site using Google Chrome's inspect 
-> element.
+## Scraping Multiple Pages and Difficult sites
 
-## Scraping Multiple Pages
-
-* Today we just scraped one webpage. But what if you wanted to do many?
+* We're start by scrape one webpage. But what if you wanted to do many?
 * Two solutions:
     - URL patterns
-    - Crawling
+    - Crawling ([Scrapy](http://scrapy.org/))
+* Lots of javascript or other problems? Check out [Selenium for Python](https://selenium-python.readthedocs.org/)
+
 
 **To the iPython Notebook!**
